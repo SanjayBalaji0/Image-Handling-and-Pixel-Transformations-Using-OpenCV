@@ -201,15 +201,55 @@ plt.subplot(1,3,3), plt.imshow(v, cmap='gray'), plt.title("Value Channel"), plt.
 plt.show()
 ```
 #### 23. Merged the H, S, V, displays along with original image.
-```python
-# YOUR CODE HERE
+```
+merged_hsv = cv2.cvtColor(cv2.merge([h, s, v]), cv2.COLOR_HSV2RGB)
+combined = np.concatenate((img_rgb, merged_hsv), axis=1)
+plt.figure(figsize=(10, 5))
+plt.imshow(combined)
+plt.title("Original Image  &  Merged HSV Image")
+plt.axis("off")
+plt.show()
 ```
 
 ## Output:
-- **i)** Read and Display an Image.  
-- **ii)** Adjust Image Brightness.  
-- **iii)** Modify Image Contrast.  
-- **iv)** Generate Third Image Using Bitwise Operations.
+- ### **i)** Read and Display an Image.  
+  1.Read 'Eagle_in_Flight.jpg' as grayscale and display:
+  ![image](https://github.com/user-attachments/assets/73c8325b-761a-4196-bf18-cbb0cb872de3)
+
+  2.Save image as PNG and display:
+  ![image](https://github.com/user-attachments/assets/8e5edc50-2da2-472b-af5f-6ba1174a6d47)
+
+  3.Cropped image:
+  ![image](https://github.com/user-attachments/assets/026e8e6c-c8b2-45f2-a483-a2513dac2747)
+
+  4.Resize and flip Horizontally:
+  ![image](https://github.com/user-attachments/assets/348be73d-36d3-40a3-a3c8-dbfea889816a)
+
+  5.Read 'Apollo-11-launch.jpg' and  Display the final annotated image:
+  ![image](https://github.com/user-attachments/assets/fd975e82-23ed-4308-ad86-13c31efd25ad)
+
+- ### **ii)** Adjust Image Brightness.
+
+1.Create brighter and darker images and display:
+![image](https://github.com/user-attachments/assets/e7a1ebba-e787-463f-9497-7824414dcca5)
+
+- ### **iii)** Modify Image Contrast.  
+1. Modify contrast using scaling factors 1.1 and 1.2:
+   ![image](https://github.com/user-attachments/assets/96db9c10-386e-42d6-b1a6-c114ebdf9a60)
+
+- ### **iv)** Generate Third Image Using Bitwise Operations.
+
+1.Split 'Boy.jpg' into B, G, R components and display:
+![image](https://github.com/user-attachments/assets/7007e99d-8283-4797-b653-c5bdd35c5210)
+
+2.Merge the R, G, B channels and display:
+![image](https://github.com/user-attachments/assets/daeb3363-40ef-4c5d-a742-9c0a331538db)
+
+3.Split the image into H, S, V components and display:
+![image](https://github.com/user-attachments/assets/16951d1b-5be8-44c6-becf-004f4860287d)
+
+4.Merge the H, S, V channels and display:
+![image](https://github.com/user-attachments/assets/9969a243-703b-4877-b475-a15fa145f3ee)
 
 ## Result:
 Thus, the images were read, displayed, brightness and contrast adjustments were made, and bitwise operations were performed successfully using the Python program.
